@@ -12,7 +12,7 @@ export default function App() {
       <form onSubmit={handleSubmit}>
         <div className="input-group">
           <label htmlFor="name" name="name">
-            <h1>Name Color Change</h1>
+            <h1>Name Form</h1>
           </label>
           <input
             type="text"
@@ -28,7 +28,7 @@ export default function App() {
         </div>
       </form>
 
-      {value && (
+      {value.length > 0 && (
         <div className="output-container">
           <button onClick={removeValue} className="btn-delete">
             <CloseIcon />
