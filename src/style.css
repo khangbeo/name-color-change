@@ -107,9 +107,15 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  right: 20px;
-  top: 20px;
-  color: #c9184a;
+  right: 10px;
+  top: 10px;
+  border-radius: 50%;
+  background-color: #ff4d6d;
+  color: #fff;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  transition: background-color 0.2s ease;
   position: absolute;
 }
 
@@ -122,5 +128,5 @@ input:focus {
 }
 
 .btn-delete:hover {
-  color: #a50c37;
+  background-color: #a50c37;
 }
