@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import AppContext from './AppContext';
+import CloseIcon from './CloseIcon';
 import './style.css';
 
 export default function App() {
-  const { name, error, handleChange, handleSubmit, value } =
+  const { name, error, handleChange, handleSubmit, value, removeValue } =
     useContext(AppContext);
 
   return (
@@ -20,13 +21,18 @@ export default function App() {
             value={name}
             onChange={handleChange}
           />
-          <button type="submit">Submit</button>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
           {error && <p className="error">{error}</p>}
         </div>
       </form>
 
       {value && (
-        <div className="output">
+        <div className="output-container">
+          <button onClick={removeValue} className="btn-delete">
+            <CloseIcon />
+          </button>
           <h2>Your name:</h2>
           <p className="output-value">{value}</p>
         </div>

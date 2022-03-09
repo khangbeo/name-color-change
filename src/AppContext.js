@@ -5,17 +5,18 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [name, setName] = useState('');
   const [error, setError] = useState(null);
+  const [value, setValue] = useState('');
 
   const handleChange = ({ target }) => {
     setName(target.value);
-    setError(null)
+    setError(null);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // check if name is not empty and length is more than 0
     if (name !== '' && name.length > 0) {
-      sessionStorage.setItem('text', name);
+      setValue(name);
       setName('');
       setError(null);
     } else {
@@ -23,7 +24,9 @@ export const AppProvider = ({ children }) => {
     }
   };
 
-  const value = sessionStorage.getItem('text');
+  const removeValue = () => {
+    setValue('');
+  };
 
   return (
     <AppContext.Provider
@@ -33,6 +36,7 @@ export const AppProvider = ({ children }) => {
         handleChange,
         handleSubmit,
         value,
+        removeValue,
       }}
     >
       {children}

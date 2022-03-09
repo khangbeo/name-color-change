@@ -16,6 +16,7 @@ body {
   min-height: 100vh;
 }
 
+/* form container */
 .container {
   display: flex;
   flex-direction: column;
@@ -65,39 +66,60 @@ button {
   padding: 20px;
 }
 
-.output {
+/* output */
+.output-container {
   color: #c9184a;
   background-color: #dddee0;
-  padding: 20px;
+  padding: 2rem;
   border-radius: 10px;
   box-shadow: 0px 12px 31px 0px rgba(0, 0, 0, 0.3);
   font-size: 20px;
+  width: 20rem;
   text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  position: relative;
 }
 
 .output-value {
   color: #0589b1;
   font-size: 30px;
-  margin-bottom: 5px;
 }
 
-button {
-  width: 100%;
+/* buttons */
+.btn {
   height: 50px;
   padding: 10px;
   border-radius: 20px;
   border: none;
-  background-color: #ff4d6d;
-  color: #fff;
   transition: background-color 0.2s ease;
   outline: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: #ff4d6d;
+  color: #fff;
+}
+
+.btn-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 10px;
 }
 
 input:focus {
   outline-color: #ff4d6d;
 }
 
-button:hover {
-  cursor: pointer;
+.btn:hover {
   background-color: #c9184a;
+}
+
+.btn-delete:hover {
+  color: #c9184a;
 }
