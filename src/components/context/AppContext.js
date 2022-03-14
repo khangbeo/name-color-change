@@ -8,11 +8,7 @@ export const AppProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [value, setValue] = useState('');
 
-  const handleChange = ({ target }) => {
-    setName(target.value);
-    setError(null);
-  };
-
+  // convert string to hash
   function hashCode(str) {
     var hash = 0;
     for (var i = 0; i < str.length; i++) {
@@ -21,11 +17,17 @@ export const AppProvider = ({ children }) => {
     return hash;
   }
 
+  // convert hash to RGB color
   function intToRGB(i) {
     var c = (i & 0x00ffffff).toString(16).toUpperCase();
 
     return '00000'.substring(0, 6 - c.length) + c;
   }
+
+  const handleChange = ({ target }) => {
+    setName(target.value);
+    setError(null);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
