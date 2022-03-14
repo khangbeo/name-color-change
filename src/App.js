@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from './components/context/AppContext';
-import CloseIcon from './CloseIcon';
+import CloseIcon from './components/CloseIcon';
 import Form from './components/Form';
 import './style.css';
 
