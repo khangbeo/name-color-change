@@ -8,7 +8,7 @@ export default function Form() {
     <form onSubmit={handleSubmit}>
       <div className="input-group">
         <label htmlFor="name" name="name">
-          <h1>Name Form</h1>
+          <h1>Color Your Name</h1>
         </label>
         <input
           type="text"
