@@ -4,9 +4,9 @@ import CloseIcon from './CloseIcon';
 import './style.css';
 
 export default function App() {
-  const { name, error, handleChange, handleSubmit, value, removeValue } =
+  const { name, color, error, handleChange, handleSubmit, value, removeValue } =
     useContext(AppContext);
-
+  console.log(color);
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
@@ -34,7 +34,9 @@ export default function App() {
             <CloseIcon />
           </button>
           <h2>Your name:</h2>
-          <p className="output-value">{value}</p>
+          <p className="output-value" style={{ color: `#${color}` }}>
+            {value}
+          </p>
         </div>
       )}
     </div>
