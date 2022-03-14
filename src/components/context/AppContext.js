@@ -4,7 +4,7 @@ const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [name, setName] = useState('');
-  const [color, setColor] = useState('');
+  const [color, setColor] = useState('000');
   const [error, setError] = useState(null);
   const [value, setValue] = useState('');
 
