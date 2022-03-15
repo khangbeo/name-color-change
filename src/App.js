@@ -16,7 +16,7 @@ export default function App() {
             <CloseIcon />
           </button>
           <h2>Your name:</h2>
-          <p className="output-value" style={{ color: `#${color}` }}>
+          <p className="output-value" style={{ color: color }}>
             {value}
           </p>
         </div>

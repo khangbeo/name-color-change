@@ -1,28 +1,34 @@
 import React, { createContext, useState } from 'react';
+import ColorHash from 'color-hash';
 
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [name, setName] = useState('');
-  const [color, setColor] = useState('000');
+  const [color, setColor] = useState('#000');
   const [error, setError] = useState(null);
   const [value, setValue] = useState('');
 
-  // convert string to hash
-  function hashCode(str) {
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-      hash = str.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    return hash;
+  function getColor(string) {
+    let hash = new ColorHash();
+    return hash.hex(string);
   }
+
+  // convert string to hash
+  // function hashCode(str) {
+  //   let hash = 0;
+  //   for (let i = 0; i < str.length; i++) {
+  //     hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  //   }
+  //   return hash;
+  // }
 
   // convert hash to RGB color
-  function intToRGB(i) {
-    let c = (i & 0x00ffffff).toString(16).toUpperCase();
+  // function intToRGB(i) {
+  //   let c = (i & 0x00ffffff).toString(16).toUpperCase();
 
-    return '00000'.substring(0, 6 - c.length) + c;
-  }
+  //   return '00000'.substring(0, 6 - c.length) + c;
+  // }
 
   const handleChange = ({ target }) => {
     setName(target.value);
@@ -34,7 +40,7 @@ export const AppProvider = ({ children }) => {
     // check if name is not empty and length is more than 0
     if (name !== '' && name.length > 0) {
       setValue(name);
-      setColor(intToRGB(hashCode(name)));
+      setColor(getColor(name));
       setName('');
       setError(null);
     } else {
