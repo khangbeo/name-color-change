@@ -3,6 +3,7 @@ import AppContext from './components/context/AppContext';
 import CloseIcon from './components/CloseIcon';
 import Form from './components/Form';
 import './style.css';
+import { Slider } from '@mui/material'
 
 export default function App() {
   const { color, value, removeValue } = useContext(AppContext);
@@ -21,6 +22,8 @@ export default function App() {
           </p>
         </div>
       )}
+
+      <Slider />
     </div>
   );
 }

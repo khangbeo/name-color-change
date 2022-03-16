@@ -9,26 +9,16 @@ export const AppProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [value, setValue] = useState('');
 
+  let hash = new ColorHash();
+
   function getColor(string) {
-    let hash = new ColorHash();
     return hash.hex(string);
   }
 
-  // convert string to hash
-  // function hashCode(str) {
-  //   let hash = 0;
-  //   for (let i = 0; i < str.length; i++) {
-  //     hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  //   }
-  //   return hash;
-  // }
-
-  // convert hash to RGB color
-  // function intToRGB(i) {
-  //   let c = (i & 0x00ffffff).toString(16).toUpperCase();
-
-  //   return '00000'.substring(0, 6 - c.length) + c;
-  // }
+  function reverseColor(string) {
+    let hash = getColor(string)
+    return hash[0] + hash.substring(1, 7).split('').reverse().join('')
+  }
 
   const handleChange = ({ target }) => {
     setName(target.value);
