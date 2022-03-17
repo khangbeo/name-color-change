@@ -10,7 +10,7 @@ export default function Slider({ color, textColor }) {
 
   return (
     <>
-      <Slider value={slider} onChange={handleChange} style={{color}} />
+      <Slider value={slider} onChange={handleChange} style={{ color }} />
       <h3 style={{ color: textColor }}>{slider}</h3>
     </>
   );
