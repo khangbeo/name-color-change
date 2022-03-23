@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Container from '@mui/material/Container';
 
 export default function Home() {
   return (
-    <h1>You're Home!</h1>
-  )
+    <Container>
+      <h1>You're Home!</h1>
+    </Container>
+  );
 }

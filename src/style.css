@@ -7,10 +7,7 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
   font-family: 'Poppins', sans-serif;
   background-image: linear-gradient(#c9184a, #892b64);
   min-height: 100vh;
@@ -36,6 +33,7 @@ form {
 
 h1 {
   font-size: 30px;
+  text-align: center;
 }
 
 .error {
