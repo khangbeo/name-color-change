@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router';
 import Navbar from './components/Navbar';
-import Slider from './components/common/Slider';
 import Home from './pages/Home';
 import ColorName from './pages/ColorName';
+import SliderValue from './pages/SliderValue'
 import './style.css';
 
 export default function App() {
