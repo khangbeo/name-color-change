@@ -1,18 +1,22 @@
-import React, { useContext, useState } from 'react';
-import AppContext from './components/context/AppContext'
-import Form from './components/Form';
-import './style.css';
+import React from 'react';
+import { Routes, Route } from 'react-router';
+import Navbar from './components/Navbar';
 import Slider from './components/common/Slider';
+import Home from './pages/Home';
+import ColorName from './pages/ColorName';
+import './style.css';
 
 export default function App() {
-  const { getColor, reverseColor } = useContext(AppContext);
-
   return (
-    <div className="container">
-      <Form title='Color Your Name' changeColor={getColor} />
-      <Form title='Reverse Color' changeColor={reverseColor} />
-      <Slider color={'white'} textColor={'white'} />
-      <Slider color={'black'} textColor={'black'} />
-    </div>
+    <>
+      <Navbar />
+      <main className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/color-name" element={<ColorName />} />
+          <Route path="/slider-value" element={<SliderValue />} />
+        </Routes>
+      </main>
+    </>
   );
 }
